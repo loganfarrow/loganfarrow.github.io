@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 
 import requests
@@ -12,7 +11,6 @@ def output(request):
 def external(request):
     inp=request.POST.get('param')
 
-=======
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -32,4 +30,3 @@ def my_link():
 
 if __name__ == '__main__':
   app.run(debug=True)
->>>>>>> 806376c7a27642e98d36faf6214c6b3b2251fff8
