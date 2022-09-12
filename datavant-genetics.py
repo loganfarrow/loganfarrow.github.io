@@ -1,22 +1,9 @@
-from django.shortcuts import render
-
-import requests
-
-def button(request):
-    return render(request,'contact.html')
-
-def output(request):
-    return "testingnn"
-
-def external(request):
-    inp=request.POST.get('param')
-
 from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  return render_template('contact.html')
 
 @app.route('/my-link/')
 def my_link():
@@ -30,3 +17,4 @@ def my_link():
 
 if __name__ == '__main__':
   app.run(debug=True)
+
