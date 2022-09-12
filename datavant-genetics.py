@@ -1,19 +1,19 @@
-vcf_file = "/Users/loganfarrow/Desktop/gnomad.exomes.r2.1.1.sites.7.vcf.bgz"
-def read_vcf(vcf_file):
-    """
-    Read a vcf file to a dict of lists.
+from flask import Flask, render_template
+app = Flask(__name__)
 
-    :param str vcf_file: Path to a vcf file.
-    :return: dict of lists of vcf records
-    :rtype: dict
-    """
-    vcf_dict = []
-    with open(vcf_file, 'r') as invcf:
-        for line in invcf:
-            if line.startswith('#'):
-                continue
-            line = line.strip().split()
-            vcf_dict.append((line[0], line[1], line[3], line[4]))
-    return vcf_dict 
-printer = read_vcf(vcf_file)
-print(printer)
+@app.route('/')
+def index():
+  return render_template('index.html')
+
+@app.route('/my-link/')
+def my_link():
+  with open('genes.vcf', 'r') as file:
+    text = file.read()
+    if text.find('rs397508165') != -1:
+      print("A Pathogenic Cystic Fibrosis variation has been detected in your DNA Profile. Allow us to connect you with a genetic counselor")
+
+  return "A Pathogenic Cystic Fibrosis variation has been detected in your DNA Profile. Allow us to connect you with a genetic counselor"
+
+
+if __name__ == '__main__':
+  app.run(debug=True)
