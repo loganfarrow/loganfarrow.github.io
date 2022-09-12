@@ -201,7 +201,7 @@ body {
 }
 
 .comingsoon a:hover {
-    color: blue;
+    color: rgb(250, 250, 255);
     font-size: 1.5em;
 }
 
@@ -539,8 +539,8 @@ label {
 }
 
 .learn-btn:hover {
-    background: blue;
-    border: 2px solid blue;
+    background: rgb(249, 249, 249);
+    border: 2px solid rgb(226, 226, 236);
 }
 
 .contact-btn {
@@ -553,7 +553,7 @@ label {
 }
 
 .contact-btn:hover {
-    color: blue;
+    color: rgb(223, 223, 228);
     border: 2px solid blue;
 }
 
